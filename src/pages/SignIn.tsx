@@ -38,10 +38,20 @@ const SignIn = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    // In a real app, this would authenticate with a backend
+    // Simulate authentication with a backend
     console.log(values);
+    
+    // Store user data in localStorage
+    const userData = {
+      email: values.email,
+      name: values.email.split('@')[0], // Use part of email as name
+      isAuthenticated: true
+    };
+    
+    localStorage.setItem('user', JSON.stringify(userData));
+    
     toast.success("Signed in successfully!");
-    navigate("/");
+    navigate("/dashboard");
   }
 
   return (
