@@ -4,6 +4,8 @@ import Header from '@/components/Header';
 import GlobalMap from '@/components/GlobalMap';
 import KeyIndicators from '@/components/KeyIndicators';
 import LatestNews from '@/components/LatestNews';
+import RegionsMap from '@/components/RegionsMap';
+import SearchBar from '@/components/SearchBar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -42,11 +44,35 @@ const Index = () => {
           </div>
         </section>
         
+        {/* Search Section */}
+        <section className="py-6 bg-blue-50">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-2xl font-bold mb-6 text-center">Search Environmental Data</h2>
+            <div className="max-w-2xl mx-auto">
+              <SearchBar />
+            </div>
+          </div>
+        </section>
+        
         {/* Key Indicators Section */}
-        <KeyIndicators />
+        <section id="indicators">
+          <KeyIndicators />
+        </section>
+        
+        {/* Regional Data Section */}
+        <section id="regions" className="py-10">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-2xl font-bold mb-2">Regional Impact</h2>
+            <p className="text-gray-500 mb-6">Explore environmental data across different geographic regions</p>
+            
+            <RegionsMap />
+          </div>
+        </section>
         
         {/* Latest Insights Section */}
-        <LatestNews />
+        <section id="resources">
+          <LatestNews />
+        </section>
         
         {/* Call to Action Section */}
         <section className="py-16 bg-gradient-to-r from-earth-blue to-earth-purple text-white">
